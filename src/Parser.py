@@ -10,11 +10,9 @@ class Parser:
             found = False
             for t in self.delim:
                 if t in txt:
-                    print(txt)
                     found = True
                     break
             if found:
-                print(txt.strip(t))
                 new_container.append(txt.strip(t))
                 new_container.append(t)
             else:
