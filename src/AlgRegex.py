@@ -1,6 +1,6 @@
 import re
 
-class reg :
+class AlgRegex :
     def __init__(self) :
         pass
 

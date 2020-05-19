@@ -1,4 +1,4 @@
-<?php require_once 'header.php'; ?>
+<?php require_once 'header.php'; setcookie('label1', 'Indonesia')?>
 
 <div class="container col-lg">
 
@@ -29,18 +29,31 @@
                                         </form>
                                     </div>
                                     <div class="col-lg-1 text-center">
-                                        <button onclick="switch_translate()" class="btn">
+                                        <button class="btn" name="switchbtn" id="switchbtn">
                                             <i class="fas fa-exchange-alt"></i>
                                         </button>
+                                        <div class="form-group">
+                                            <select class="form-control" id="algorithm" name="algorithm">
+                                                <option value="KMP">KMP</option>
+                                                <option value="BM">BM</option>
+                                                <option value="Regex">Regex</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="form-group">
                                             <p class="text-center" id="label2">Sunda</p>
                                             <textarea style="resize:none" class="form-control" id="text2" name="text2" rows="10" disabled><?php
                                                 if (isset($_POST['btn1'])) {
-                                                    $command = escapeshellcmd("python main.py " . $_POST['text1']);
-                                                    $output = shell_exec($command);
-                                                    echo $output; 
+                                                    if (!empty($_POST['text1'])) {
+                                                        // echo $_POST['algorithm'];
+                                                        $translate = $_COOKIE['label1'];
+                                                        setcookie('label1', 'Indonesia');
+                                                        // echo $translate;
+                                                        $command = escapeshellcmd("python main.py " . $translate . " " . $_POST['text1']);
+                                                        $output = shell_exec($command);
+                                                        echo $output; 
+                                                    }
                                                 }?>
                                             </textarea>
                                         </div>

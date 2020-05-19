@@ -1,4 +1,4 @@
-class kmp :
+class AlgKMP :
     def __init__(self):
         pass
 

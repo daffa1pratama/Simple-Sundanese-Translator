@@ -1,4 +1,4 @@
-class bm :
+class AlgBM :
     def __init__ (self) :
         pass
 

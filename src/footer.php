@@ -8,16 +8,20 @@
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
 <script>
-    function switch_translate() {
-        var current_label = document.getElementById('label1');
-        if (current_label.innerHTML === 'Sunda') {
-            document.getElementById('label1').innerHTML = 'Indonesia';
-            document.getElementById('label2').innerHTML = 'Sunda';
-        } else {
-            document.getElementById('label1').innerHTML = 'Sunda';
-            document.getElementById('label2').innerHTML = 'Indonesia';
-        }
-    }
+    $('#switchbtn').on('click', function() {
+        $(document).ready(function() {
+            var label1 = $('#label1');
+            var label2 = $('#label2');
+            if (label1.text() === 'Indonesia') {
+                label1.html('Sunda');
+                label2.html('Indonesia');
+            } else {
+                label1.html('Indonesia');
+                label2.html('Sunda');
+            }
+            document.cookie = escape('label1') + "=" + escape(label1.text());
+        });
+    });
 </script>
 
 </body>
