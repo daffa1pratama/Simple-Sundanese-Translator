@@ -90,7 +90,7 @@ Sunda : abdi henteu tiasa bahasa Sunda
 ![Tampilan Translate Program](https://github.com/daffa1pratama/Simple-Sundanese-Translator/blob/master/src/assets/img/img3.jpg)
 
 ## Video Demo
-Link video demo program : (TBD)
+Link video demo program : https://youtu.be/combQ-h4vbo
 
 ## Built With
 * [Bootstrap](https://getbootstrap.com/) - Layouting website
