@@ -88,9 +88,9 @@ Sunda : abdi henteu tiasa bahasa Sunda
 
 
 ## Built With
-* [Bootstrap] (https://getbootstrap.com/) - Layouting website
-* [SB Admin 2] (https://startbootstrap.com/themes/sb-admin-2/) - Bootstrap template
-* [Python] (https://www.python.org/) - Backend
+* [Bootstrap](https://getbootstrap.com/) - Layouting website
+* [SB Admin 2](https://startbootstrap.com/themes/sb-admin-2/) - Bootstrap template
+* [Python](https://www.python.org/) - Backend
 * [PHP] - Backend
 
 ## Catatan

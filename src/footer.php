@@ -6,7 +6,7 @@
 <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="assets/js/sb-admin-2.min.js"></script>
 <script>
     $(document).ready(function() {
         document.cookie = 'label1=Indonesia';
@@ -30,7 +30,7 @@
 <footer class="page-footer font-small fixed-bottom">
     <div class="footer-copyright text-center py-3 text-white">© Daffa Pratama Putra - 13518033</div>
 </footer>
-<!-- Footer -->
+<!-- End of Footer -->
 </body>
 
 </html>

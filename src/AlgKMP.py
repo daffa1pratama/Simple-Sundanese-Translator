@@ -1,13 +1,16 @@
+# Knuth-Morris-Pratt String Matching Algorithm
 class AlgKMP :
+    # Constructor
     def __init__(self):
         pass
 
+    # failureFunction Function
+    # Find failure function value for every character in pattern
     def failureFunction(self, pattern) :
         failure = [0] * len(pattern)
         m = len(pattern)
         i = 1
         j = 0
-
         while (i < m) :
             if (pattern[i] == pattern[j]) :
                 failure[i] = j + 1
@@ -20,6 +23,8 @@ class AlgKMP :
                 i += 1
         return failure
 
+    # Match Function
+    # Match pattern with text with Knuth-Morris-Pratt algorithm
     def match(self, text, pattern) :
         m = len(pattern)
         n = len(text)

@@ -1,13 +1,19 @@
+# Boyer-Moore String Matching Algorithm
 class AlgBM :
+    # Constructor
     def __init__ (self) :
         pass
-
+    
+    # lastOccurance Function
+    # Finding last occurance value for every character 
     def lastOccuranceFunction (self, pattern) :
         lastOccurance = [-1]*256
         for i in range (len(pattern)) :
             lastOccurance[ord(pattern[i])] = i
         return lastOccurance
 
+    # Match Function
+    # Match pattern with text with Boyer-Moore algorithm
     def match(self, text, pattern) :
         m = len(pattern)
         n = len(text)
@@ -29,5 +35,4 @@ class AlgBM :
                 lo = lastOccurance[ord(text[i])]
                 i = i + m - min(j, lo + 1)
                 j = m - 1
-        
         return -1
