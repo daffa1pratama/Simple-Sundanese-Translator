@@ -85,10 +85,12 @@ Indonesia : saya tidak bisa bahasa Sunda
 Sunda : abdi henteu tiasa bahasa Sunda
 ```
 ## Tampilan Program
-![Tampilan Utama Program](https://github.com/daffa1pratama/Simple-Sundanese-Translator/tree/master/src/assets/img/img1.jpg)
-![Tampilan Translate Program](https://github.com/daffa1pratama/Simple-Sundanese-Translator/tree/master/src/assets/img/img2.jpg)
-![Tampilan Translate Program](https://github.com/daffa1pratama/Simple-Sundanese-Translator/tree/master/src/assets/img/img3.jpg)
+![Tampilan Utama Program](https://github.com/daffa1pratama/Simple-Sundanese-Translator/blob/master/src/assets/img/img1.jpg)
+![Tampilan Translate Program](https://github.com/daffa1pratama/Simple-Sundanese-Translator/blob/master/src/assets/img/img2.jpg)
+![Tampilan Translate Program](https://github.com/daffa1pratama/Simple-Sundanese-Translator/blob/master/src/assets/img/img3.jpg)
 
+## Video Demo
+Link video demo program : (TBD)
 
 ## Built With
 * [Bootstrap] (https://getbootstrap.com/) - Layouting website
@@ -99,7 +101,7 @@ Sunda : abdi henteu tiasa bahasa Sunda
 ## Catatan
  - Kamus yang digunakan pada program ini tidak sepenuhnya mencakup kosakata bahasa Sunda dan bahasa Indonesia, sehingga ada kata-kata yang gagal diterjemahkan karena kurangnya kosakata dalam kamus.
  - Program hanya dapat membaca kata yang diterjemahkan dalam lowercase, sehingga kata yang tidak dalam lowercase tidak dapat diterjemahkan dan dianggap sebagai kata diluar kamus.
- - Tambahakn partikel penegas 'Teh' diberikan setelah kata ganti orang, seperti abdi, urang, maneh, maraneh dan kata penunjuk, seperti ini dan itu
+ - Tambahan partikel penegas 'Teh' diberikan setelah kata ganti orang, seperti abdi, urang, maneh, maraneh dan kata penunjuk, seperti ini dan itu
 
 ## Author
 **Daffa Pratama Putra / 13518033** - *Programmer, Tester*
