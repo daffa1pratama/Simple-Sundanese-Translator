@@ -4,21 +4,51 @@ Simple Sundanese to Bahasa Indonesia translator using Pattern Matching
 ## Latar Belakang
 Pada suatu hari, ada mahasiswa bernama Riyugan yang baru pindah ke Bandung. Pada awalnya dia mengalami kesulitan untuk bersosialisai dengan lingkungan sekitar karena orang-orang di lingkungannya yang baru hanya berbicara dalam bahasa Sunda. Beruntungnya Riyugan punya teman dari kampung halamannya, yaitu Anda, untuk diminta membuat penerjemah sederhana dari Bahasa Sunda ke Bahasa Indonesia begitu pula sebaliknya untuk memudahkan dirinya bersosialisasi dengan lingkungan barunya di Bandung.
 
-## Spesifikasi
-Buatlah dalam bahasa pemrograman Python, program penerjemah sederhana yang memanfaatkan algoritma String Matching (Knuth-Morris-Pratt(KMP), Boyer-Moore(BM), dan Regex), dengan spesifikasi sebagai berikut.
-1. Program mampu membaca kata atau kalimat yang akan diterjemahkan.
-2. Program akan membaca file eksternal yang berisi vocabulary Bahasa Sunda - Bahasa Indonesia (file sudah disiapkan dalam repository).
-3. Program akan melakukan penerjemahan secara perkata (untuk contoh akan ditampilkan di bawah).
-4. Program dapat memilih mau "Bahasa Sunda ke Bahasa Indonesia" atau "Bahasa Indonesia ke Bahasa Sunda".
-5. Pada saat penerjemahan "Bahasa Sunda ke Bahasa Indonesia", program mampu mengenali kata yang tidak memiliki arti (stopwords), seperti "teh" sehingga dapat diabaikan saat penerjemahan.
-6. Pada saat penerjemahan "Bahasa Indonesia ke Bahasa Sunda", program mampu menambahkan kata untuk penekanan kalimat, seperti "teh".
-7. Program dapat menampilkan hasil terjemahan.
-8. Program dibuat secara individu.
-9. Peserta akan mendapatkan nilai bonus jika mengimplementasikan dalam web (untuk bahasanya dibebaskan).
-10. Dilarang meng-copy source code program yang sudah jadi, untuk source code algoritma string matching dipersilahkan menggunakan source code dari tugas yang sudah pernah dibuat (Tugas Kecil 4).
-11. Batas pengerjaannya adalah 6 Juni 2020.
+## Deskripsi
+Program Simple Sundenese Translator adalah sebuah program sederhana berbasis website yang berguna untuk menerjemahkan kalimat berbahasa Indonesia ke bahasa Sunda ataupun sebaliknya. Program ini dapat menghapus dan menambahkan partikel penegas 'Teh' dalam bahasa Sunda. Pengguna dapat memilih algoritma pencocokan string yang digunakan, tersedia algoritma Knuth-Morris-Pratt (KMP), algoritma Boyer-Moore (BM), dan Regular Expression (Regex). Pengguna juga dapat memilih metode pencarian kata yang digunakan, tersedia pilihan cari semua kata yang cocok dalam kamus atau kata pertama yang ditemukan.
 
-## Contoh Kasus Uji
+## Fitur Tambahan
+Developer menambahkan fitur metode pencarian, tersedia pilihan FindAll atau FindFirst. Fitur ini ditambahkan karena ada beberapa kalimat yang jika diterjemahkan menjadi kalimat yang tidak lazim digunakan. Seperti contoh :
+```
+Sunda - Indonesia
+Sunda : abdi jalma Surabaya
+Indonesia (FindFirst) : saya manusia Surabaya
+Indonesia (FindAll) : saya manusia/orang Surabaya
+```
+Fitur ini ditambahkan dengan harapan pengguna dapat memilih pilihan kata terjemahan yang diberikan oleh program
+
+## Getting Started
+### Prerequisites
+Hal yang perlu dipersiapkan untuk menjalankan program ini :
+```
+- Python Compiler (versi 3.x.x)
+- Web Browser
+- Web Server
+```
+Langkah-langkah yang harus dilakukan untuk memenuhi prerequisites di atas adalah sebagai berikut :
+1. Install Python Compiler (versi 3.x.x) dengan mengunduh dari laman :
+```
+https://www.python.org/downloads/
+```
+2. Install web browser, dibebaskan. Developer menggunakan google chrome yang dapat diunduh dari laman :
+```
+https://www.google.com/intl/id_id/chrome/
+```
+3. Install web server, dibebaskan. Developer menggunakan XAMPP yang dapat diunduh dari laman :
+```
+https://www.apachefriends.org/index.html
+```
+
+### Installing
+Berikut adalah langkah-langkah untuk menginstall program :
+1. Copy folder `Simple-Sundanese-Translator`
+2. Paste pada direktori `C:\xampp\htdocs\`
+3. Jalankan XAMPP
+4. Jalankan module Apache pada XAMPP
+5. Masukkan alamat `http://localhost/Simple-Sundanese-Translator/src/` pada web browser
+6. Program berhasil dijalankan
+
+## Tests
 ```
 Sunda - Indonesia
 Sunda : nami abdi Riyugan
@@ -54,9 +84,18 @@ Indonesia - Sunda
 Indonesia : saya tidak bisa bahasa Sunda
 Sunda : abdi henteu tiasa bahasa Sunda
 ```
+## Tampilan Program
 
-## Pengumpulan
-1. Lakukan merge request dari hasil fork kalian ke repository ini
-2. Untuk demonya, silahkan membuat video demo penggunaan programnya, diupload ke YouTube dan sertakan linknya pada Readme.
 
-### **_(Ubah file README ini pada repository hasil fork kalian)_**
+## Built With
+* [Bootstrap] (https://getbootstrap.com/) - Layouting website
+* [SB Admin 2] (https://startbootstrap.com/themes/sb-admin-2/) - Bootstrap template
+* [Python] (https://www.python.org/) - Backend
+* [PHP] - Backend
+
+## Catatan
+ - Kamus yang digunakan pada program ini tidak sepenuhnya mencakup kosakata bahasa Sunda dan bahasa Indonesia, sehingga ada kata-kata yang gagal diterjemahkan karena kurangnya kosakata dalam kamus.
+ - Program hanya dapat membaca kata yang diterjemahkan dalam lowercase, sehingga kata yang tidak dalam lowercase tidak dapat diterjemahkan dan dianggap sebagai kata diluar kamus.
+
+## Author
+**Daffa Pratama Putra / 13518033** - *Programmer, Tester*
