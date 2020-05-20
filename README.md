@@ -96,7 +96,7 @@ Link video demo program : https://youtu.be/combQ-h4vbo
 * [Bootstrap](https://getbootstrap.com/) - Layouting website
 * [SB Admin 2](https://startbootstrap.com/themes/sb-admin-2/) - Bootstrap template
 * [Python](https://www.python.org/) - Backend
-* [PHP] - Backend
+* PHP - Backend
 
 ## Catatan
  - Kamus yang digunakan pada program ini tidak sepenuhnya mencakup kosakata bahasa Sunda dan bahasa Indonesia, sehingga ada kata-kata yang gagal diterjemahkan karena kurangnya kosakata dalam kamus.
