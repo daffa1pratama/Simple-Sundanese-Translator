@@ -8,6 +8,9 @@
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
 <script>
+    $(document).ready(function() {
+        document.cookie = 'label1=Indonesia';
+    });
     $('#switchbtn').on('click', function() {
         $(document).ready(function() {
             var label1 = $('#label1');
@@ -23,7 +26,11 @@
         });
     });
 </script>
-
+<!-- Footer -->
+<footer class="page-footer font-small fixed-bottom">
+    <div class="footer-copyright text-center py-3 text-white">© Daffa Pratama Putra - 13518033</div>
+</footer>
+<!-- Footer -->
 </body>
 
 </html>

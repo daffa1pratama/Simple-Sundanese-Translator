@@ -11,16 +11,18 @@ import sys
 # text = 'saya tidak bisa bahasa Sunda'
 # text = 'abdi teh sanes jalma Bandung'
 
-global tanda, kamus, stopwords
+global mark, kamus, stopwords
+mark = ['?', ',', '.', ';', '/']
+stopwords = ['abdi', 'aing', 'dewek', 'kaula', 'kuring', 'urang', 'anjeun', 'hidep', 'maneh', 'sia', 'anjeunna', 'manehna', 'ini', 'itu']
 
-def doTranslate(alg, text, translate) :
+def translateAll(alg, text, translate) :
     trans_container = []
     i = 0
     for i in range(len(text)) :
         found = False
         temp = []
         for line in kamus:
-            if (text[i] in tanda):
+            if (text[i] in mark):
                 break
             else:
                 if (alg.match(line[0], text[i]) != -1 and len(text[i]) == len(line[0])):
@@ -32,31 +34,87 @@ def doTranslate(alg, text, translate) :
                 for i in range(1, len(temp)):
                     stream += '/' + temp[i]
             trans_container.append(stream)
+            # 'Teh' adder
+            if (translate == 'Indonesia' and any(elm in temp for elm in stopwords) and len(text) != 1) :
+                trans_container.append('teh')
         else:
+            # 'Teh' remover
             if (translate == 'Sunda' and text[i-1] in stopwords) :
                 if (text[i] != 'teh') :
                     trans_container.append(text[i])
+            # If word not in kamus
             else :
                 trans_container.append(text[i])
         i += 1
-    stream = trans_container[0]
+    result = trans_container[0]
     for i in range(1, len(trans_container)) :
-        stream += " " + trans_container[i]
-    return(stream)
+        result += " " + trans_container[i]
+    return(result)
+
+def translateFirst(alg, text, translate) :
+    trans_container = []
+    i = 0
+    for i in range(len(text)) :
+        found = False
+        temp = []
+        for line in kamus:
+            if (text[i] in mark):
+                break
+            else:
+                if (alg.match(line[0], text[i]) != -1 and len(text[i]) == len(line[0])):
+                    trans_container.append(line[1])
+                    found = True
+                    break
+        if (found):
+            # 'Teh' adder
+            if (translate == 'Indonesia' and any(elm in temp for elm in stopwords) and len(text) != 1) :
+                trans_container.append('teh')
+        else:
+            # 'Teh' remover
+            if (translate == 'Sunda' and text[i-1] in stopwords) :
+                if (text[i] != 'teh') :
+                    trans_container.append(text[i])
+            # If word not in kamus
+            else :
+                trans_container.append(text[i])
+        i += 1
+    result = trans_container[0]
+    for i in range(1, len(trans_container)) :
+        result += " " + trans_container[i]
+    return(result)
 
 def getTextFromArg(arg) :
-    text = sys.argv[2]
-    i = 3
+    text = sys.argv[4]
+    i = 5
     while (i < (len(sys.argv))) :
         text += " " + sys.argv[i]
         i += 1
     return text
 
-translate = sys.argv[1]
-text = getTextFromArg(sys.argv)
+def getAlgorithmFromArg(arg) :
+    algorithm = sys.argv[2]
+    if (algorithm == 'KMP') :
+        alg = AlgKMP()
+    elif (algorithm == 'BM') :
+        alg = AlgBM()
+    else :
+        alg = AlgRegex()
+    return alg
 
-tanda = ['?', ',', '.', ';', '/']
-stopwords = ['abdi', 'aing', 'dewek', 'kaula', 'kuring', 'urang', 'anjeun', 'hidep', 'maneh', 'sia', 'anjeunna', 'manehna']
+def getTranslateFromArg(arg) :
+    translate = sys.argv[1]
+    return translate
+
+def getFindMethodFromArg(arg) :
+    find = sys.argv[3]
+    if (find == 'All') :
+        return 'All'
+    return 'First'
+
+text = getTextFromArg(sys.argv)
+alg = getAlgorithmFromArg(sys.argv)
+translate = getTranslateFromArg(sys.argv)
+findMethod = getFindMethodFromArg(sys.argv)
 
 reader = KamusReader()
 kamus = reader.readKamus(translate.lower())
@@ -64,9 +122,8 @@ kamus = reader.readKamus(translate.lower())
 parser = Parser()
 text = parser.parse(text)
 
-alg = AlgKMP()
-# alg = AlgBM()
-# alg = AlgRegex()
-
-result = doTranslate(alg, text, translate)
+if (findMethod == 'All') :
+    result = translateAll(alg, text, translate)
+else :
+    result = translateFirst(alg, text, translate)
 print(result)
